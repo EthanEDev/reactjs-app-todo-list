@@ -1,0 +1,46 @@
+$taskBgColor: rgb(60, 62, 68);
+
+.taskContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $taskBgColor;
+  border-radius: 5px;
+  padding: 0 20px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+  &:hover {
+    box-shadow: 0 0 10px black;
+  }
+  .task {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    > p {
+      margin: 20px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .delete {
+    cursor: pointer;
+    img {
+      width: 25px;
+      height: 25px;
+      opacity: 0.4;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.checked {
+  text-decoration: line-through 0.5px;
+  color: rgb(122, 122, 122);
+  background-color: darken($taskBgColor, 5%);
+}
