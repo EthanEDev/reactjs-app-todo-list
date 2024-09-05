@@ -88,6 +88,7 @@ Once the application is running, you can manage your tasks by:
 - React.js
 - JavaScript (ES6+)
 - CSS
+- SCSS
 
 ## Contributing
 
