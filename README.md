@@ -1,6 +1,6 @@
 # ReactJS Todo List App
 
-A simple and responsive todo list application built with React.js. This app helps users manage tasks efficiently by allowing them to add, edit, delete, and mark tasks as complete. The intuitive interface ensures a smooth experience across devices.
+A simple and responsive todo list application built with React.js. This app helps users manage tasks efficiently by allowing them to add, delete, and mark tasks as complete. The intuitive interface ensures a smooth experience across devices.
 
 ## Screenshot
 
