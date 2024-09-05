@@ -1,8 +1,108 @@
-# React + Vite
+# ReactJS Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive todo list application built with React.js. This app helps users manage tasks efficiently by allowing them to add, edit, delete, and mark tasks as complete. The intuitive interface ensures a smooth experience across devices.
 
-Currently, two official plugins are available:
+## Screenshot
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Todo List Screenshot](./screenshot.png)  <!-- Replace with the path to your screenshot image -->
+
+## Live Demo
+
+You can try out the live demo of this project [here](https://reactjs-app-todo-list.vercel.app/).
+
+## Features
+
+- **Add Tasks**: Quickly add new tasks with a simple input form.
+- **Delete Tasks**: Remove tasks that are no longer needed.
+- **Mark as Complete**: Mark tasks as completed with a single click.
+- **Responsive Design**: Works seamlessly on desktop and mobile devices.
+
+## Installation
+
+### Using Create React App
+
+To get started with the project locally using Create React App, follow these steps:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/EthanEDev/reactjs-app-todo-list.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd reactjs-app-todo-list
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4. **Start the development server:**
+
+    ```bash
+    npm start
+    ```
+
+### Using Vite
+
+If the project uses Vite instead of Create React App, follow these steps:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/EthanEDev/reactjs-app-todo-list.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd reactjs-app-todo-list
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4. **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+## Usage
+
+Once the application is running, you can manage your tasks by:
+
+- **Adding Tasks**: Enter the task name and click the "Add" button to add a new task to the list.
+- **Deleting Tasks**: Remove a task by clicking the delete button.
+- **Marking Tasks as Complete**: Click the checkbox next to a task to mark it as completed.
+
+## Technologies Used
+
+- React.js
+- JavaScript (ES6+)
+- CSS
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or find bugs, please open an issue or submit a pull request.
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have any questions, feel free to reach out to me via GitHub issues or at [ethan.ekhtiyar@gmail.com](mailto:ethan.ekhtiyar@gmail.com).
