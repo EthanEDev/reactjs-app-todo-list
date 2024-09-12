@@ -1,4 +1,3 @@
-import React, { useEffect, useRef, useState } from "react";
 import CheckedIcon from "../icons/check.png";
 import UncheckedIcon from "../icons/uncheck.png";
 import TrashIcon from "../icons/trash.png";
