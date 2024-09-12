@@ -5,16 +5,21 @@ import "./App.scss";
 import { tasksReducer, initState } from "./reducers/tasksReducer";
 
 export default function App() {
+  // useReducer to manage the state with tasksReducer and initial state
   const [state, dispatch] = useReducer(tasksReducer, initState);
+  // Dispatch action to update input text in state
   const updateText = (e) => {
     dispatch({ type: "UPDATE_INPUT_TEXT", payload: e.target.value });
   };
+  // Dispatch action to add a new task
   const addTask = (e) => {
     dispatch({ type: "ADD_TASK", payload: e });
   };
+  // Dispatch action to mark a task as done
   const doneTask = (index) => {
     dispatch({ type: "DONE_TASK", payload: index });
   };
+  // Dispatch action to delete a task
   const deleteTask = (index) => {
     dispatch({ type: "DELETE_TASK", payload: index });
   };
