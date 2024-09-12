@@ -1,45 +1,66 @@
-import React, { useReducer } from "react";
+import { useEffect } from "react";
 import ToDo from "./components/todo";
 import AddIcon from "./icons/add.png";
 import "./App.scss";
-import { tasksReducer, initState } from "./reducers/tasksReducer";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  initTasks,
+  updateInputText,
+  addTask,
+  doneTask,
+  deleteTask,
+} from "./store/slices/todoSlice";
 
 export default function App() {
-  // useReducer to manage the state with tasksReducer and initial state
-  const [state, dispatch] = useReducer(tasksReducer, initState);
-  // Dispatch action to update input text in state
-  const updateText = (e) => {
-    dispatch({ type: "UPDATE_INPUT_TEXT", payload: e.target.value });
+  // Extract tasks from the Redux store's todo slice
+  const state = useSelector((store) => store.todo);
+  // Create a dispatch function to send actions to the Redux store
+  const dispatch = useDispatch();
+
+  // This will trigger only once at mount to load tasks from localStorage
+  useEffect(() => {
+    // Dispatch action to initialize tasks from localStorage, or set an empty array if no tasks are found
+    dispatch(initTasks(JSON.parse(localStorage.getItem("tasks")) ?? []));
+  }, [dispatch]); // Including dispatch is unnecessary but it becomes a habit to always specify all dependencies correctly.
+
+  // This will trigger every time `tasks` changes to update the localStorage
+  useEffect(() => {
+    // Save the updated tasks array in localStorage as a string
+    localStorage.setItem("tasks", JSON.stringify(state.tasks));
+  }, [state]); // Dependency on tasks ensures this effect runs only when tasks change
+
+  // Dispatches an action to update the task input text
+  const handleUpdateText = (e) => {
+    dispatch(updateInputText(e.target.value));
   };
-  // Dispatch action to add a new task
-  const addTask = (e) => {
-    dispatch({ type: "ADD_TASK", payload: e });
+
+  // Dispatches an action to add a new task
+  const handleAdd = (e) => {
+    e.preventDefault();
+    dispatch(addTask());
   };
-  // Dispatch action to mark a task as done
-  const doneTask = (index) => {
-    dispatch({ type: "DONE_TASK", payload: index });
+
+  // Dispatches an action to toggle the task as done/undone
+  const handleDone = (index) => {
+    dispatch(doneTask(index));
   };
-  // Dispatch action to delete a task
-  const deleteTask = (index) => {
-    dispatch({ type: "DELETE_TASK", payload: index });
+
+  // Dispatches an action to delete a task
+  const handleDelete = (index) => {
+    dispatch(deleteTask(index));
   };
+
   return (
     <div className="container">
       <h2 className="title">ToDo List</h2>
-      <form className="form" onSubmit={addTask}>
+      <form className="form" onSubmit={(e) => handleAdd(e)}>
         <input
           value={state.newTask}
           type="text"
           placeholder="Add a task..."
-          onChange={(e) => updateText(e)}
+          onChange={(e) => handleUpdateText(e)}
         />
-
-        <input
-          type="image"
-          title="add to list"
-          alt="Submit"
-          src={AddIcon}
-        />
+        <input type="image" title="add to list" alt="Submit" src={AddIcon} />
       </form>
       <div className="list">
         {state.tasks.length === 0 ? (
@@ -50,8 +71,8 @@ export default function App() {
               task={task}
               id={index}
               key={index}
-              handleDelete={deleteTask}
-              handleDone={doneTask}
+              handleDelete={handleDelete}
+              handleDone={handleDone}
             />
           ))
         )}

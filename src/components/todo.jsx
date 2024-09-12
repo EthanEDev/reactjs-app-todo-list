@@ -11,7 +11,7 @@ export default function ToDo({ task, id, handleDelete, handleDone }) {
         <p className={task.done ? "checked" : ""}>{task.text}</p>
       </div>
       <div className="delete" title="delete">
-        <img src={TrashIcon} alt="" onClick={handleDelete} />
+        <img src={TrashIcon} alt="" onClick={() => handleDelete(id)} />
       </div>
     </div>
   );
