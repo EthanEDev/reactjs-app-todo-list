@@ -15,6 +15,8 @@ You can try out the live demo of this project [here](https://reactjs-app-todo-li
 - **Add Tasks**: Quickly add new tasks with a simple input form.
 - **Delete Tasks**: Remove tasks that are no longer needed.
 - **Mark as Complete**: Mark tasks as completed with a single click.
+- **Local Storage**: Tasks are saved in local storage to retain your list between sessions.
+- **useReducer for State Management**: Using `useReducer` to manage the task list more efficiently.
 - **Responsive Design**: Works seamlessly on desktop and mobile devices.
 
 ## Installation
@@ -82,6 +84,7 @@ Once the application is running, you can manage your tasks by:
 - **Adding Tasks**: Enter the task name and click the "Add" button to add a new task to the list.
 - **Deleting Tasks**: Remove a task by clicking the delete button.
 - **Marking Tasks as Complete**: Click the checkbox next to a task to mark it as completed.
+- **Persistent Task List**: Tasks are stored in local storage, so your list is retained even after refreshing or closing the browser.
 
 ## Technologies Used
 
