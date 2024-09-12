@@ -16,7 +16,7 @@ You can try out the live demo of this project [here](https://reactjs-app-todo-li
 - **Delete Tasks**: Remove tasks that are no longer needed.
 - **Mark as Complete**: Mark tasks as completed with a single click.
 - **Local Storage**: Tasks are saved in local storage to retain your list between sessions.
-- **Redux Toolkit**: Using `Redux-Toolkit` to manage the task list more efficiently.
+- **Redux Toolkit**: Using Redux store to manage the task list more efficiently.
 - **Responsive Design**: Works seamlessly on desktop and mobile devices.
 
 ## Installation
