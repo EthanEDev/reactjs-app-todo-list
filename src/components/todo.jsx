@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CheckedIcon from "../icons/check.png";
 import UncheckedIcon from "../icons/uncheck.png";
 import TrashIcon from "../icons/trash.png";
 import "./todo.scss";
 
-export default function ToDo({ task, id, handleDelete }) {
-  const [isDone, setIsDone] = useState(false);
-
+export default function ToDo({ task, id, handleDelete, handleDone }) {
   return (
-    <div key={id} className={"taskContainer"+(isDone ? " checked" : "")} >
-      <div className="task" onClick={() => setIsDone(!isDone)}>
-        <img src={isDone ? CheckedIcon : UncheckedIcon} alt="" title="done" />
-        <p className={isDone ? "checked" : ""}>{task}</p>
+    <div key={id} className={"taskContainer"+(task.done ? " checked" : "")} >
+      <div className="task" onClick={() => handleDone(id)}>
+        <img src={task.done ? CheckedIcon : UncheckedIcon} alt="" title="done" />
+        <p className={task.done ? "checked" : ""}>{task.text}</p>
       </div>
       <div className="delete" title="delete">
         <img src={TrashIcon} alt="" onClick={handleDelete} />

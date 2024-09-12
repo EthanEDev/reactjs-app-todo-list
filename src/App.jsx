@@ -1,22 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useReducer } from "react";
 import ToDo from "./components/todo";
 import AddIcon from "./icons/add.png";
 import "./App.scss";
+import { tasksReducer, initState } from "./reducers/tasksReducer";
 
 export default function App() {
-  const [inputValue, setInputValue] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const inputTextRef = useRef(null);
+  const [state, dispatch] = useReducer(tasksReducer, initState);
+  const updateText = (e) => {
+    dispatch({ type: "UPDATE_INPUT_TEXT", payload: e.target.value });
+  };
+  const addTask = (e) => {
+    dispatch({ type: "ADD_TASK", payload: e });
+  };
+  const doneTask = (index) => {
+    dispatch({ type: "DONE_TASK", payload: index });
+  };
+  const deleteTask = (index) => {
+    dispatch({ type: "DELETE_TASK", payload: index });
+  };
   return (
     <div className="container">
       <h2 className="title">ToDo List</h2>
-      <form className="form">
+      <form className="form" onSubmit={addTask}>
         <input
-          value={inputValue}
-          ref={inputTextRef}
+          value={state.newTask}
           type="text"
           placeholder="Add a task..."
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => updateText(e)}
         />
 
         <input
@@ -24,24 +34,19 @@ export default function App() {
           title="add to list"
           alt="Submit"
           src={AddIcon}
-          onClick={(e) => {
-            e.preventDefault();
-            setTasks([...tasks, inputValue]);
-            setInputValue("");
-            inputTextRef.current.focus();
-          }}
         />
       </form>
       <div className="list">
-        {tasks.length === 0 ? (
+        {state.tasks.length === 0 ? (
           <div className="empty">There is no task to do!</div>
         ) : (
-          tasks.map((task, id) => (
+          state.tasks.map((task, index) => (
             <ToDo
               task={task}
-              id={id}
-              key={id}
-              handleDelete={() => setTasks(tasks.filter((_, i) => id !== i))}
+              id={index}
+              key={index}
+              handleDelete={deleteTask}
+              handleDone={doneTask}
             />
           ))
         )}
