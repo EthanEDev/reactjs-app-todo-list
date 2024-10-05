@@ -1,0 +1,64 @@
+.taskContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-color-task);
+  border-radius: 5px;
+  padding: 0 20px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 12px var(--bg-color-task-shadow);
+  }
+  .task {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+
+    div > .check-icon {
+      width: 25px;
+      height: 25px;
+      path {
+        stroke: var(--accent-color);
+      }
+    }
+    .uncheck-icon {
+      width: 25px;
+      height: 25px;
+      fill: var(--bg-color-task-done);
+    }
+
+    > p {
+      margin: 20px;
+      font-size: 16px;
+      font-weight: 100;
+      line-height: 24px;
+      background-color: inherit;
+      text-align: justify;
+    }
+  }
+  .delete {
+    cursor: pointer;
+    div > svg {
+      width: 25px;
+      height: 25px;
+      opacity: 0.4;
+      fill: var(--text-color);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+.checked {
+  text-decoration: line-through 0.5px;
+  color: var(--text-color-fade);
+  background-color: var(--bg-color-task-done);
+
+  &:hover {
+    box-shadow: 0 0 0px var(--bg-color-task-shadow);
+  }
+}

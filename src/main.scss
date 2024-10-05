@@ -1,0 +1,32 @@
+:root {
+  --accent-color: hsl(222, 60%, 50%);
+  --bg-color-task-shadow: hsl(222, 60%, 50%);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: hsl(0, 0%, 98%);
+    --bg-color-hover: hsl(222, 25%, 95%);
+    --bg-color-task: hsl(222, 50%, 75%);
+    --bg-color-task-done: hsl(222, 10%, 80%);
+    --text-color: hsl(0, 0%, 5%);
+    --text-color-fade: hsl(0, 0%, 40%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: hsl(222, 25%, 12%);
+    --bg-color-hover: hsl(222, 25%, 15%);
+    --bg-color-task: hsl(222, 15%, 24%);
+    --bg-color-task-done: hsl(222, 10%, 20%);
+    --text-color: hsl(0, 0%, 90%);
+    --text-color-fade: hsl(0, 0%, 50%);
+  }
+}
+body {
+  font-family: "Arial";
+  font-weight: 600;
+  max-width: 768px;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

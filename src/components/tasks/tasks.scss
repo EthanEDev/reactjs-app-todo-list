@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  flex-direction: column;
+
+  .empty {
+    color: var(--text-color-fade);
+    height: 20vh;
+    text-align: center;
+    line-height: 20vh;
+  }
+}

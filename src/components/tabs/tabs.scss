@@ -1,0 +1,24 @@
+.tabs {
+    display: flex;
+    gap: 10px;
+    
+    button {
+        font-size: 18px;
+        width: 33.33%;
+        border: 0;
+        border-radius: 5px 5px 0 0;
+        padding: 10px;
+        background-color: inherit;
+        color: var(--text-color-fade);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--bg-color-hover);
+          }
+    }
+    .active-tab {
+        border-bottom: 1px solid var(--text-color);
+        color: var(--text-color);
+        font-weight: 700;
+    }
+}

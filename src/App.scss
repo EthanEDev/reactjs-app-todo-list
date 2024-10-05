@@ -1,57 +1,14 @@
-$secondaryColor: #1875d7;
-
 .container {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   padding: 30px;
   position: relative;
-  background-color: rgb(39, 43, 51);
   border-radius: 10px;
-  margin-top: 50px;
+  margin-bottom: 50px;
 
   .title {
     margin: 0;
-    padding: 0 0 30px 0;
     align-self: center;
-  }
-  .form {
-    display: flex;
-    background-color: rgb(39, 43, 51);
-    input {
-      font-size: 16px;
-      color: whitesmoke;
-      border: solid 1px whitesmoke;
-    }
-
-    input[type="text"] {
-      padding: 15px 20px;
-      flex-grow: 1;
-      border-radius: 5px 0 0 5px;
-      outline: 0;
-      background-color: inherit;
-    }
-    input[type="image"] {
-      padding: 15px;
-      width: 30px;
-      height: 30px;
-      border-radius: 0 5px 5px 0;
-      background-color: $secondaryColor;
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        background-color: lighten($secondaryColor, 10%);
-      }
-    }
-  }
-  .list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-    .empty {
-      color: gray;
-      height: 20vh;
-      text-align: center;
-      line-height: 20vh;
-    }
   }
 }
