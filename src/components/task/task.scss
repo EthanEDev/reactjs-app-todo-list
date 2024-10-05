@@ -17,17 +17,20 @@
     flex-grow: 1;
     cursor: pointer;
 
-    div > .check-icon {
-      width: 25px;
-      height: 25px;
-      path {
-        stroke: var(--accent-color);
+    div {
+      display: flex;
+      .check-icon {
+        width: 25px;
+        height: 25px;
+        path {
+          stroke: var(--accent-color);
+        }
       }
-    }
-    .uncheck-icon {
-      width: 25px;
-      height: 25px;
-      fill: var(--bg-color-task-done);
+      .uncheck-icon {
+        width: 25px;
+        height: 25px;
+        fill: var(--bg-color-task-done);
+      }
     }
 
     > p {
@@ -41,14 +44,17 @@
   }
   .delete {
     cursor: pointer;
-    div > svg {
-      width: 25px;
-      height: 25px;
-      opacity: 0.4;
-      fill: var(--text-color);
+    div {
+      display: flex;
+      svg {
+        width: 25px;
+        height: 25px;
+        opacity: 0.4;
+        fill: var(--text-color);
 
-      &:hover {
-        opacity: 1;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
