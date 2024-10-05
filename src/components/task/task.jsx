@@ -2,19 +2,22 @@ import "./task.scss";
 
 export default function Task({ task, id, handleDelete, handleDone }) {
   return (
+    // Conditional class applied based on task.done to indicate whether the task is checked (completed).
     <div key={id} className={"taskContainer" + (task.done ? " checked" : "")}>
       <div className="task" onClick={() => handleDone(id)}>
         <div>
           {task.done ? (
+            // Checkmark SVG displayed when the task is done.
             <svg className="check-icon" viewBox="0 0 25 25" fill="none">
               <path
                 d="M4 12L8.94975 16.9497L19.5572 6.34326"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           ) : (
+            // Empty checkbox SVG displayed when the task is not done.
             <svg className="uncheck-icon" viewBox="0 0 25 25">
               <path d="M3,18V6A2,2,0,0,1,5,4H19a2,2,0,0,1,2,2V18a2,2,0,0,1-2,2H5A2,2,0,0,1,3,18Z" />
             </svg>
