@@ -1,7 +1,8 @@
 .list {
   display: flex;
   flex-direction: column;
-
+  gap: 5px;
+  
   .empty {
     color: var(--text-color-fade);
     height: 20vh;

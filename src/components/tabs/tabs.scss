@@ -22,3 +22,8 @@
         font-weight: 700;
     }
 }
+@media (max-width: 480px) {
+    .tabs > button {
+        font-size: 14px;
+    }
+  }

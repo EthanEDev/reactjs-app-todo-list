@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1 className="title">ToDo List</h1>
+      <h2 className="title">ToDo List</h2>
       <Form />
       <Tasks />
     </div>

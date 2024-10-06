@@ -5,7 +5,6 @@
   background-color: var(--bg-color-task);
   border-radius: 5px;
   padding: 0 20px;
-  margin-bottom: 5px;
   transition: all 0.2s;
 
   &:hover {
@@ -34,9 +33,9 @@
     }
 
     > p {
-      margin: 20px;
+      padding: 0 10px;
       font-size: 16px;
-      font-weight: 100;
+      font-weight: 300;
       line-height: 24px;
       background-color: inherit;
       text-align: justify;
@@ -56,6 +55,15 @@
           opacity: 1;
         }
       }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .taskContainer {
+    padding: 0 10px;
+
+    &:hover {
+      box-shadow: none;
     }
   }
 }
